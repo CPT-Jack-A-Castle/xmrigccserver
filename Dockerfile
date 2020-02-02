@@ -7,9 +7,9 @@ RUN apt-get update && \
 
 RUN  git clone https://github.com/Bendr0id/xmrigCC.git && \
 	cd xmrigCC && \
-	cmake . -DWITH_CC_SERVER=ON -DWITH_HTTPD=ON -DWITH_CC_CLIENT=ON && \
+	cmake . -DWITH_CC_CLIENT=OFF && \
 	make 
 	
 COPY Dockerfile /Dockerfile
 
-ENTRYPOINT  ["/xmrigCC/xmrigCCServer"]
+ENTRYPOINT  ["/xmrigCC/xmrigServer"]
